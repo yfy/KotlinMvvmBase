@@ -40,6 +40,10 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
+    //Navigation Component
+    implementation "androidx.navigation:navigation-fragment-ktx:$versions.navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$versions.navigation_version"
+
     //Workmanager
     implementation "androidx.work:work-runtime-ktx:$versions.work_version"
 

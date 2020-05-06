@@ -62,5 +62,6 @@
     <color name="tintcolor">#FF4352</color>
     <color name="fabgradientstart">#FF2A68</color>
     <color name="fabgradientend">#FF5E3A</color>
-
+    <color name="inputbox_highlight_color">#5856D6</color>
+    
 </resources>

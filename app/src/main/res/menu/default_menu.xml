@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/def"
+        android:title="Default"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/bordered_white"
+        >
+    </item>
+    <item
+        android:id="@+id/def2"
+        android:title="Default2"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/bordered_white"
+        >
+    </item>
+
+</menu>
