@@ -1,0 +1,97 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.yfysoftware.mvvm"
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
+
+    //Material
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    //Workmanager
+    implementation "androidx.work:work-runtime-ktx:$versions.work_version"
+
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$versions.lifecycle_version"
+
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle_version"
+    //noinspection LifecycleAnnotationProcessorWithJava8
+    kapt "androidx.lifecycle:lifecycle-compiler:$versions.lifecycle_version"
+
+    //AAC
+    implementation "android.arch.lifecycle:extensions:$versions.aac"
+    implementation "android.arch.lifecycle:runtime:$versions.aac"
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:$versions.glide"
+    kapt "com.github.bumptech.glide:compiler:$versions.glide"
+
+    //Room
+    implementation "androidx.room:room-runtime:$versions.room_version"
+    kapt "androidx.room:room-compiler:$versions.room_version"
+    implementation "androidx.room:room-ktx:$versions.room_version"
+
+    //Retrofit & Gson
+    implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+
+    //Dexter
+    implementation "com.karumi:dexter:$versions.dexter"
+
+    //EventBus
+    implementation "org.greenrobot:eventbus:$versions.eventbus"
+    //OkHttp
+    implementation "com.squareup.okhttp3:okhttp:$versions.okhttp"
+
+    //Firebase
+    implementation "com.google.firebase:firebase-firestore-ktx:$versions.firestore"
+    implementation "com.google.firebase:firebase-analytics:$versions.firebaseanalytics"
+    implementation "com.google.firebase:firebase-core:$versions.firebasecore"
+    implementation "com.google.firebase:firebase-auth:$versions.firebaseauth"
+    implementation "com.google.firebase:firebase-storage:$versions.firebasestorage"
+    implementation "com.google.firebase:firebase-messaging:$versions.firebasemessaging"
+    implementation "com.firebaseui:firebase-ui-auth:$versions.firebaseuiauth"
+    implementation "com.google.firebase:firebase-database:$versions.firebasedatabase"
+
+    //Test
+    testImplementation "junit:junit:$versions.junit"
+    androidTestImplementation "androidx.test.ext:junit:$versions.junitext"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$versions.espresso"
+
+
+}
