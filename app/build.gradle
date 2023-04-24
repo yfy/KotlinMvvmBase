@@ -1,15 +1,21 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+
 android {
-    compileSdkVersion 29
+    compileSdkVersion 33
     buildToolsVersion "29.0.3"
 
     defaultConfig {
         applicationId "com.yfysoftware.mvvm"
         minSdkVersion 23
-        targetSdkVersion 29
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
 
@@ -32,13 +38,13 @@ dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation "androidx.appcompat:appcompat:$versions.appcompat"
+    implementation "androidx.core:core-ktx:$versions.core"
 
     //Material
-    implementation 'com.google.android.material:material:1.1.0'
-    implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation "com.google.android.material:material:$versions.material"
+    implementation "androidx.cardview:cardview:$versions.cardview"
+    implementation "androidx.recyclerview:recyclerview:$versions.recyclerview"
 
     //Navigation Component
     implementation "androidx.navigation:navigation-fragment-ktx:$versions.navigation_version"
@@ -83,14 +89,16 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:$versions.okhttp"
 
     //Firebase
-    implementation "com.google.firebase:firebase-firestore-ktx:$versions.firestore"
-    implementation "com.google.firebase:firebase-analytics:$versions.firebaseanalytics"
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-auth-ktx'
     implementation "com.google.firebase:firebase-core:$versions.firebasecore"
-    implementation "com.google.firebase:firebase-auth:$versions.firebaseauth"
-    implementation "com.google.firebase:firebase-storage:$versions.firebasestorage"
-    implementation "com.google.firebase:firebase-messaging:$versions.firebasemessaging"
+    implementation "com.google.firebase:firebase-storage-ktx"
+    implementation "com.google.firebase:firebase-messaging-ktx"
     implementation "com.firebaseui:firebase-ui-auth:$versions.firebaseuiauth"
-    implementation "com.google.firebase:firebase-database:$versions.firebasedatabase"
+    implementation "com.google.firebase:firebase-database-ktx"
+    implementation platform('com.google.firebase:firebase-bom:$versions.firebasebom')
+    implementation 'com.google.firebase:firebase-dynamic-links-ktx'
 
     //Test
     testImplementation "junit:junit:$versions.junit"
